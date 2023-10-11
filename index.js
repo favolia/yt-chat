@@ -1,3 +1,6 @@
+// NOTE: JANGAN LUPA INSTALL youtube-chat
+// npm i youtube-chat
+
 const { LiveChat } = require("youtube-chat")
 
 const liveChat = new LiveChat({ liveId: "STREAM_ID" })
@@ -5,7 +8,6 @@ const liveChat = new LiveChat({ liveId: "STREAM_ID" })
 liveChat.on("start", (liveId) => {
     console.log({ liveId });
 })
-
 
 liveChat.on("end", (reason) => {
     console.log({ reason });
