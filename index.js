@@ -1,6 +1,6 @@
 const { LiveChat } = require("youtube-chat")
 
-const liveChat = new LiveChat({ liveId: "EPC6UdSuTbM?si=okBUM5-IaggKlkJB" })
+const liveChat = new LiveChat({ liveId: "STREAM_ID" })
 
 liveChat.on("start", (liveId) => {
     console.log({ liveId });
