@@ -1,6 +1,6 @@
 const { LiveChat } = require("youtube-chat")
 
-const liveChat = new LiveChat({ liveId: "LIVE_ID_HERE" })
+const liveChat = new LiveChat({ liveId: "EPC6UdSuTbM?si=okBUM5-IaggKlkJB" })
 
 liveChat.on("start", (liveId) => {
     console.log({ liveId });
@@ -13,7 +13,8 @@ liveChat.on("end", (reason) => {
 
 // Notify chat
 liveChat.on("chat", (chatItem) => {
-    console.log({ chatItem });
+    const { author, id, isMembership, isModerator, isOwner, isVerified, message, timestamp, superchat } = chatItem
+    console.log(`${author.name}: ${message[0]?.text}`)
 })
 
 // biar kalo error munculin di konsol
