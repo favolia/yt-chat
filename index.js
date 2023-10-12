@@ -2,8 +2,10 @@
 // npm i youtube-chat
 
 const { LiveChat } = require("youtube-chat")
+const chalk = require('chalk')
+const liveId = "__djiNMRx9A"
 
-const liveChat = new LiveChat({ liveId: "STREAM_ID" })
+const liveChat = new LiveChat({ liveId })
 
 liveChat.on("start", (liveId) => {
     console.log({ liveId });
@@ -16,7 +18,10 @@ liveChat.on("end", (reason) => {
 // Notify chat
 liveChat.on("chat", (chatItem) => {
     const { author, id, isMembership, isModerator, isOwner, isVerified, message, timestamp, superchat } = chatItem
-    console.log(`${author.name}: ${message[0]?.text}`)
+    const username = chalk`{${isOwner ? 'yellow' : isVerified ? 'cyan' : isModerator ? 'blue' : isMembership ? 'green' : 'gray' } ${author.name ?? 'undefined_name'}:}`
+    const comment = message.map((item, i) => `${item?.text ?? ''}${item?.emojiText ?? ''}`).join('')
+
+    console.log(`${username} ${comment}`);
 })
 
 // biar kalo error munculin di konsol
