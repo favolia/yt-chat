@@ -1,9 +1,9 @@
-// NOTE: JANGAN LUPA INSTALL youtube-chat
-// npm i youtube-chat
+// NOTE: JANGAN LUPA INSTALL youtube-chat dan chalk (versi 4.0.0)
+// npm i youtube-chat chalk@4.0.0
 
 const { LiveChat } = require("youtube-chat")
 const chalk = require('chalk')
-const liveId = "__djiNMRx9A"
+const liveId = "LIVE_ID"
 
 const liveChat = new LiveChat({ liveId })
 
